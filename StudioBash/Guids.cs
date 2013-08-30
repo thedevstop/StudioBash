@@ -2,7 +2,7 @@
 // MUST match guids.h
 using System;
 
-namespace TheDevStop.StudioBash_Package
+namespace TheDevStop.StudioBash
 {
     static class GuidList
     {

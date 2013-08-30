@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="StudioBash..1a327804-3dcd-40a5-9661-b415ddbad099" Version="1.0" Language="en-US" Publisher="The DevStop" />
+    <Identity Id="84c9f1f6-363b-4fdf-92ba-b49cddef6796" Version="0.9.1" Language="en-US" Publisher="The DevStop" />
     <DisplayName>StudioBash</DisplayName>
-    <Description xml:space="preserve">Yo dawg, I heard you like bash so I but bash in your VS so you can bash while you VS.</Description>
-    <MoreInfo>http://thedevstop.wordpress.com</MoreInfo>
-    <Tags>bash,console</Tags>
+    <Description>Yo dawg, we heard you like bash, so we put bash in your IDE so you can bash while you code.</Description>
+    <Tags>bash,git,console</Tags>
   </Metadata>
-  <Installation>
+  <Installation InstalledByMsi="false">
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.11.0" DisplayName="Visual Studio MPF 11.0" d:Source="Installed" Version="11.0" />
   </Dependencies>
   <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%.Package" Path="|StudioBash.Package;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
   </Assets>
 </PackageManifest>

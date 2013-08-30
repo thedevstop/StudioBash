@@ -2,7 +2,7 @@
 // MUST match PkgCmdID.h
 using System;
 
-namespace TheDevStop.StudioBash_Package
+namespace TheDevStop.StudioBash
 {
     static class PkgCmdIDList
     {

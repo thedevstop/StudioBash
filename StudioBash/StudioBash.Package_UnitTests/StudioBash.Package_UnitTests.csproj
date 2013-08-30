@@ -72,9 +72,9 @@
     <None Include="Key.snk" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StudioBash.Package.csproj">
+    <ProjectReference Include="..\StudioBash.csproj">
       <Project>{0F1791D5-120B-4060-BD44-D15846F917AC}</Project>
-      <Name>StudioBash.Package</Name>
+      <Name>StudioBash</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

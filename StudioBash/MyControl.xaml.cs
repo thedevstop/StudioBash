@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Windows;
+using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -11,25 +12,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.VisualStudio.Shell;
 
-namespace TheDevStop.StudioBash_Package
+namespace TheDevStop.StudioBash
 {
     /// <summary>
     /// Interaction logic for MyControl.xaml
     /// </summary>
     public partial class MyControl : UserControl
     {
+        private readonly Bash _bash;
+
         public MyControl()
         {
             InitializeComponent();
+
+            _bash = new Bash();
+            this.DataContext = _bash;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1300:SpecifyMessageBoxOptions")]
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private async void Command_KeyUp(object sender, KeyEventArgs e)
         {
-            MessageBox.Show(string.Format(System.Globalization.CultureInfo.CurrentUICulture, "We are inside {0}.button1_Click()", this.ToString()),
-                            "StudioBash");
+            if (e.Key != Key.Enter)
+                return;
 
-        }
+            await _bash.SendLine(this.Command.Text);
+            this.Command.Text = string.Empty;
+        }       
     }
 }

@@ -49,7 +49,7 @@ namespace StudioBash.Package_IntegrationTests
 
                 //Validate package load
                 IVsPackage package;
-                Guid packageGuid = new Guid(TheDevStop.StudioBash_Package.GuidList.guidStudioBash_PackagePkgString);
+                Guid packageGuid = new Guid(TheDevStop.StudioBash.GuidList.guidStudioBash_PackagePkgString);
                 Assert.IsTrue(0 == shellService.LoadPackage(ref packageGuid, out package));
                 Assert.IsNotNull(package, "Package failed to load");
 

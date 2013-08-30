@@ -17,7 +17,7 @@ using Microsoft.VsSDK.UnitTestLibrary;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VSSDK.Tools.VsIdeTesting;
-using TheDevStop.StudioBash_Package;
+using TheDevStop.StudioBash;
 
 namespace StudioBash.Package_UnitTests.MyToolWindowTest
 {

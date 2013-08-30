@@ -42,12 +42,12 @@ namespace StudioBash.Package_IntegrationTests
         {
             UIThreadInvoker.Invoke((ThreadInvoker)delegate()
             {
-                CommandID toolWindowCmd = new CommandID(TheDevStop.StudioBash_Package.GuidList.guidStudioBash_PackageCmdSet, (int)TheDevStop.StudioBash_Package.PkgCmdIDList.cmdidStudioBash);
+                CommandID toolWindowCmd = new CommandID(TheDevStop.StudioBash.GuidList.guidStudioBash_PackageCmdSet, (int)TheDevStop.StudioBash.PkgCmdIDList.cmdidStudioBash);
 
                 TestUtils testUtils = new TestUtils();
                 testUtils.ExecuteCommand(toolWindowCmd);
 
-                Assert.IsTrue(testUtils.CanFindToolwindow(new Guid(TheDevStop.StudioBash_Package.GuidList.guidToolWindowPersistanceString)));
+                Assert.IsTrue(testUtils.CanFindToolwindow(new Guid(TheDevStop.StudioBash.GuidList.guidToolWindowPersistanceString)));
 
             });
         }

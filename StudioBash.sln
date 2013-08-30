@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioBash", "StudioBash\StudioBash.csproj", "{255A6C84-2A68-4EA5-B304-69F5C88B5500}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioBash", "StudioBash\StudioBash.csproj", "{0F1791D5-120B-4060-BD44-D15846F917AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioBash.Package", "StudioBash.Package\StudioBash.Package.csproj", "{0F1791D5-120B-4060-BD44-D15846F917AC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioBash.Package_IntegrationTests", "StudioBash.Package\StudioBash.Package_IntegrationTests\StudioBash.Package_IntegrationTests.csproj", "{0027AB48-A571-4B56-B4AE-D913ABA942BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioBash.Package_IntegrationTests", "StudioBash\StudioBash.Package_IntegrationTests\StudioBash.Package_IntegrationTests.csproj", "{0027AB48-A571-4B56-B4AE-D913ABA942BC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AD408CB5-1E12-4609-8193-E1CF482B8D6E}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		UnitTests.testsettings = UnitTests.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioBash.Package_UnitTests", "StudioBash.Package\StudioBash.Package_UnitTests\StudioBash.Package_UnitTests.csproj", "{06FF81FE-F19C-40D5-928E-16B9CDF7E785}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudioBash.Package_UnitTests", "StudioBash\StudioBash.Package_UnitTests\StudioBash.Package_UnitTests.csproj", "{06FF81FE-F19C-40D5-928E-16B9CDF7E785}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{255A6C84-2A68-4EA5-B304-69F5C88B5500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{255A6C84-2A68-4EA5-B304-69F5C88B5500}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{255A6C84-2A68-4EA5-B304-69F5C88B5500}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{255A6C84-2A68-4EA5-B304-69F5C88B5500}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F1791D5-120B-4060-BD44-D15846F917AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F1791D5-120B-4060-BD44-D15846F917AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F1791D5-120B-4060-BD44-D15846F917AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
