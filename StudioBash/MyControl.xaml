@@ -13,10 +13,13 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+
+        <ScrollViewer x:Name="ContentScroller">
+            <TextBox x:Name="ContentBlock" Grid.Row="0"  Text="{Binding ContentCache}" 
+                       ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                       ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+        </ScrollViewer>
         
-        <TextBlock x:Name="StreamingText" Grid.Row="0"
-                    Text="{Binding ContentCache}" />
-            
         <DockPanel Grid.Row="1">
             <TextBlock Text=">"></TextBlock>
             <TextBox x:Name="Command" KeyUp="Command_KeyUp"></TextBox>

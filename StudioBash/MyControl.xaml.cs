@@ -28,7 +28,13 @@ namespace TheDevStop.StudioBash
             InitializeComponent();
 
             _bash = new Bash();
+            _bash.OutputDataReceived += _bash_OutputDataReceived;
             this.DataContext = _bash;
+        }
+
+        void _bash_OutputDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
+        {
+            ContentScroller.ScrollToEnd();
         }
 
         private async void Command_KeyUp(object sender, KeyEventArgs e)
