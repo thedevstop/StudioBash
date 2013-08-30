@@ -1,0 +1,6 @@
+[Bb]in/
+[Oo]bj/
+*.testsettings
+*.suo
+*.snk
+*.user
