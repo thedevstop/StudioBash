@@ -6,8 +6,6 @@ namespace TheDevStop.StudioBash
 {
     static class PkgCmdIDList
     {
-
         public const uint cmdidStudioBash =    0x101;
-
     };
 }

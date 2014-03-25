@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Windows;
+﻿using Microsoft.VisualStudio.Shell;
+using System;
 using System.Runtime.InteropServices;
-using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.VisualStudio.Shell;
+using System.Windows.Forms.Integration;
 
 namespace TheDevStop.StudioBash
 {
@@ -34,14 +29,29 @@ namespace TheDevStop.StudioBash
             // when docked with an other window
             // The resource ID correspond to the one defined in the resx file
             // while the Index is the offset in the bitmap strip. Each image in
-            // the strip being 16x16.
+            // the strip being 16x16.e
             this.BitmapResourceID = 301;
             this.BitmapIndex = 1;
+
+            var consoleControl = new ApplicationControl();
+
+            // Replace this with user configuration
+            consoleControl.ExeName = @"C:\Program Files (x86)\Console2\console.exe";
+
+            // The Bash shell is a fixed size console set through properties. Better to embed conEmu (cmder) or console2.
+            //consoleControl.ExeName = @"C:\Program Files (x86)\Git\bin\sh.exe";
+            //consoleControl.Args = "--login -i";
+
+            // Create the interop host control.
+            WindowsFormsHost host = new WindowsFormsHost();
+
+            // Assign the Console control as the host control's child.
+            host.Child = consoleControl;
 
             // This is the user control hosted by the tool window; Note that, even if this class implements IDisposable,
             // we are not calling Dispose on this object. This is because ToolWindowPane calls Dispose on 
             // the object returned by the Content property.
-            base.Content = new MyControl();
+            base.Content = host;
         }
     }
 }
