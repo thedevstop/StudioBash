@@ -38,7 +38,10 @@ namespace TheDevStop.StudioConsole
         protected override void OnGotFocus(EventArgs e)
         {
             base.OnGotFocus(e);
-            this.OnResize(null);
+            this.OnResize(e);
+
+            NativeMethods.SetForegroundWindow(appHwnd);
+            NativeMethods.SetActiveWindow(appHwnd);
             NativeMethods.SetFocus(appHwnd);
         }
 

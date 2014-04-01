@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms.Integration;
@@ -18,6 +19,8 @@ namespace TheDevStop.StudioConsole
     [Guid("6e40be5b-ee19-4f2d-9a93-32f2235c9aed")]
     public class ConsoleToolWindow : ToolWindowPane
     {
+        private ApplicationControl ConsoleControl { get; set; }
+
         /// <summary>
         /// Standard constructor for the tool window.
         /// </summary>
@@ -37,10 +40,10 @@ namespace TheDevStop.StudioConsole
             if (string.IsNullOrEmpty(SCSettings.Instance.ConsolePath))
                 return;
 
-            var consoleControl = new ApplicationControl();
+            ConsoleControl = new ApplicationControl();
 
             // Replace this with user configuration
-            consoleControl.ExeName = SCSettings.Instance.ConsolePath; // @"C:\Program Files (x86)\Console2\console.exe";
+            ConsoleControl.ExeName = SCSettings.Instance.ConsolePath; // @"C:\Program Files (x86)\Console2\console.exe";
 
             // The Bash shell is a fixed size console set through properties. Better to embed conEmu (cmder) or console2.
             //consoleControl.ExeName = @"C:\Program Files (x86)\Git\bin\sh.exe";
@@ -50,7 +53,7 @@ namespace TheDevStop.StudioConsole
             WindowsFormsHost host = new WindowsFormsHost();
 
             // Assign the Console control as the host control's child.
-            host.Child = consoleControl;
+            host.Child = ConsoleControl;
 
             // This is the user control hosted by the tool window; Note that, even if this class implements IDisposable,
             // we are not calling Dispose on this object. This is because ToolWindowPane calls Dispose on 
